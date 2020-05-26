@@ -1,0 +1,21 @@
+.footer{
+	font-weight: bold;
+	font :white;
+	text-align:  center;
+}
+
+.quotes{
+
+
+}
+
+p .qmessage:before{
+
+content: "\201C";
+}
+
+p .qmessage:after{
+
+content: "\201D";
+}
+
