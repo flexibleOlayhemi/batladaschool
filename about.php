@@ -16,6 +16,10 @@
 
 		 	
 		 }
+		 #about {
+		 	background: blue;
+		 border-radius: 5px;
+		 }
 
 
 </style>	
@@ -27,7 +31,7 @@
 		<div class="row justify-content-center">	
 				<div class="col-12">
 
-					<p class="about">
+					<p class="about p-3">
 
 						<span style="display :block;color: black; font-size: 25px; padding-bottom: 5px;">About us</span>
 						<span style="margin-left: 10px;">We</span> are known for accademic excellence...<br>

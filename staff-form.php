@@ -1,6 +1,9 @@
 <?php 
-
-include "post.php"
+session_start();
+include "post.php";
+if(!isset($_SESSION['user'])){
+  header("location:admin-login.php ? m=You must login first");
+}
  ?>
 
  <!DOCTYPE html>
@@ -33,7 +36,7 @@ include "post.php"
 		 			</div>
 		 			<div class="form-group py-2">
 		 				<label for="dob">Date of Birth:</label>
-		 				<input type="date" name="tdob" class="form-control" required>	
+		 				<input type="date" name="tdob" pattern="\d{1,2}-\d{1,2}-\d{4}" class="form-control" required>	
 		 			</div>
 		 			<div class="form-group py-2">
 		 				<label for="pnum">Contact:</label>

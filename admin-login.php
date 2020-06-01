@@ -5,7 +5,8 @@ include "nav.php";
 include "post.php";
 
 if(isset($_SESSION['user'])){
-	header("location:admin.php");
+	//header("location:admin.php");
+echo "<script>window.location = \"admin.php\"</script>";
 
 }
 

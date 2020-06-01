@@ -1,5 +1,9 @@
 <?php 
-include "post.php"
+session_start();
+include "post.php";
+if(!isset($_SESSION['user'])){
+  header("location:admin-login.php ? m=You must login first");
+}
 
  ?>
 
@@ -35,7 +39,7 @@ include "post.php"
 		 				<input type="date" name="sdob" class="form-control" required>	
 		 			</div>
 		 			<div class="form-group py-2">
-		 				<label for="pnum">Parent Contact:</label>
+		 				<label for="pnum">Parent Contact Number:</label>
 		 				<input type="text" name="spnum" class="form-control" required>	
 		 			</div>
 		 			<div class="form-group py-2">
@@ -44,30 +48,39 @@ include "post.php"
 		 			</div>
 		 			<div class="form-group py-2">
 		 				<label for="email">Email:</label>
-		 				<input type="text" name="semail" class="form-control">	
+		 				<input type="text" name="semail" class="form-control" placeholder="optional">	
 		 			</div>
 		 			<div class="form-group py-2">
 		 				<label for="sclass">Class:</label>
 		 				<select name="sclass" class="form-control">
 		 					<option value="" disabled>Select Class</option>
 		 					<option value="" style="color: red;" disabled><b>Primary</b></option>
-		 					<option value="p1">Primary one</option>
-		 					<option value="p2">Primary two</option>
-		 					<option value="p3">Primary two</option>
-		 					<option value="p4">Primary two</option>
-		 					<option value="p5">Primary two</option>
+		 					<option value="1">Primary one</option>
+		 					<option value="2">Primary two</option>
+		 					<option value="3">Primary three</option>
+		 					<option value="4">Primary four</option>
+		 					<option value="5">Primary five</option>
 		 					<option value="" style="color: red;" disabled><b>Secondary</b></option>
-		 					<option value="jss1">JSS1</option>
+		 					<option value="6">JSS1</option>
+		 					<option value="7">JSS2</option>
+		 					<option value="8">JSS3</option>
 		 				</select>	
 		 			</div>
 		 			<div class="form-group py-2">
-		 				<label for="timage">Image:</label>
+		 				<label for="simage">Image:</label>
 		 				<input type="file" name="simage" class="form-control">	
 		 			</div>
-		 		<button class="btn btn-primary mb-5" name="addstudent">ADD</button>	
+		 		
+		 		 	<button class="btn btn-primary m-2" name="addstudent">ADD</button>	
+		 		 	
+		 		 
 		 		</form>
 			</div>
  		</div>
+
+ 		
+
+
  	<?php include "footer.php" ?>	
  	</div>
  

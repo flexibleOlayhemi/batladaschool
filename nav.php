@@ -14,19 +14,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item ">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.php" id="home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About-us</a>
+            <a class="nav-link" href="about.php" id="about">About-us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact-us</a>
+            <a class="nav-link" href="contact.php" id="contact">Contact-us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="gallery.php">Gallery</a>
+            <a class="nav-link" href="gallery.php" id="gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin-login.php">Admin</a>
+            <a class="nav-link" href="admin-login.php" id="admin">Admin</a>
           </li>
         </ul>
       </div>

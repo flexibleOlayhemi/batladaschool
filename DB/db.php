@@ -90,9 +90,8 @@ class createDB{
 				email VARCHAR(100),
 				img VARCHAR(255),
 				class_id INT(255),
-				subject_id INT(255),
-				FOREIGN KEY (class_id) REFERENCES Classes(id),
-				FOREIGN KEY (subject_id) REFERENCES Subjects(id)
+				FOREIGN KEY (class_id) REFERENCES Classes(id)
+				
 
 
 				)";
@@ -130,10 +129,8 @@ class createDB{
 				//create classes table
 				$sql =  "CREATE TABLE IF NOT EXISTS Classes(
 				id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-				name VARCHAR(100),
-				std_id INT(255),
-				FOREIGN KEY (std_id) REFERENCES Students(id)
-
+				name VARCHAR(100)
+				
 				)";
 
 				//execute query
@@ -149,6 +146,23 @@ class createDB{
 				name VARCHAR(100),
 				class_id INT(255),
 				FOREIGN KEY (class_id) REFERENCES Classes(id)
+
+				)";
+
+				//execute query
+
+				if (!mysqli_query($this->con, $sql)){
+
+					echo "Unable to create table : ".mysqli_error($this->con);
+				}
+
+				//create studentsubject table
+				$sql =  "CREATE TABLE IF NOT EXISTS studentsubject(
+				id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+				std_id INT(255),
+				subject_id INT(255),
+				FOREIGN KEY (std_id) REFERENCES Students(id),
+				FOREIGN KEY (subject_id) REFERENCES Subjects(id)
 
 				)";
 
@@ -234,35 +248,37 @@ class createDB{
 	}
 
 
-	public function addStudent($fname,$mname,$lname,$DOB,$pnum,$address,$email){
+	public function addStudent($fname,$mname,$lname,$DOB,$pnum,$address,$email,$img,$class){
 
-
+			
 		//query
-		$sql = "INSERT INTO students(fname,mname,lname,dob,pnum,address,email) VALUES(
-		'$fname','$mname','$lname','$DOB','$pnum','$address','$email'
+		$sql = "INSERT INTO students(fname,mname,lname,DOB,pnum,address,email,img,class_id) VALUES(
+		'$fname','$mname','$lname','$DOB','$pnum','$address','$email','$img','$class'
 		)" ;
 
 		//execute query
 
 		if(!mysqli_query($this->con, $sql)){
-			echo "Failed to add student". mysqli_error($this->con);
+			//echo "Failed to add student". mysqli_error($this->con);
+			return false;
 		}else{
 			return true;
 		}
 
 	}
-	public function addStaff($fname,$mname,$lname,$DOB,$num,$address,$email){
+	public function addStaff($fname,$mname,$lname,$DOB,$num,$address,$email,$img){
 
 
 		//query
-		$sql = "INSERT INTO teachers(fname,mname,lname,dob,num,address,email) VALUES(
-		'$fname','$mname','$lname','$DOB','$pnum','$address','$email'
+		$sql = "INSERT INTO teachers(fname,mname,lname,dob,num,address,email,img) VALUES(
+		'$fname','$mname','$lname','$DOB','$num','$address','$email','$img'
 		)" ;
 
 		//execute query
 
 		if(!mysqli_query($this->con, $sql)){
-			echo "Failed to add teacher". mysqli_error($this->con);
+			//echo "Failed to add teacher". mysqli_error($this->con);
+			return false;
 		}else{
 			return true;
 		}
@@ -270,6 +286,102 @@ class createDB{
 	}
 
 
+	public function getStudent(){
+
+		//query 
+		$sql = "SELECT students.id,students.fname,students.mname,students.lname,students.DOB,students.pnum,students.address,students.email,students.img,students.class_id,classes.name
+				FROM students
+				INNER JOIN classes
+				ON students.class_id=classes.id ";
+		//execute query
+		$result = mysqli_query($this->con,$sql);
+		        	if (mysqli_num_rows($result)>0){
+		        		return $result;
+		        	}else 
+		        	{
+		        		//echo "Failed to Retrieve data : ". mysqli_error($this->con);
+		        		return false;
+		        	}
+
+
+	}
+
+
+
+	public function getStaffs(){
+
+		//query 
+		$sql = "SELECT * FROM teachers ";
+		//execute qery
+		$result = mysqli_query($this->con,$sql);
+		        	if (mysqli_num_rows($result)>0){
+		        		return $result;
+		        	}else 
+		        	{
+		        		//echo "Failed to Retrieve data : ". mysqli_error($this->con);
+		        		return false;
+		        	}
+
+
+	}
+
+	public function updateStudent($fname,$mname,$lname,$DOB,$pnum,$address,$email,$class,$id){
+		//query
+		$sql = "UPDATE students SET fname = '$fname', mname = '$mname', lname = '$lname', DOB = '$DOB', pnum = '$pnum', address = '$address', email = '$email', class_id = '$class' WHERE students.id = '$id' " ;
+
+		//execute query
+
+		if(!mysqli_query($this->con, $sql)){
+			//echo "Failed to add student". mysqli_error($this->con);
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public function updateTeachers($fname,$mname,$lname,$DOB,$num,$address,$email,$id){
+		//query
+		$sql = "UPDATE teachers SET fname = '$fname', mname = '$mname', lname = '$lname', DOB = '$DOB', num = '$num', address = '$address', email = '$email' WHERE teachers.id = '$id' " ;
+
+		//execute query
+
+		if(!mysqli_query($this->con, $sql)){
+			//echo "Failed to add student". mysqli_error($this->con);
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public function uploadsimage($img,$id){
+
+		//query
+		$sql = "UPDATE students SET img = '$img' WHERE students.id = '$id' " ;
+
+		//execute query
+
+		if(!mysqli_query($this->con, $sql)){
+			//echo "Failed to add student". mysqli_error($this->con);
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public function uploadtimage($img,$id){
+
+		//query
+		$sql = "UPDATE teachers SET img = '$img' WHERE teachers.id = '$id' " ;
+
+		//execute query
+
+		if(!mysqli_query($this->con, $sql)){
+			//echo "Failed to add student". mysqli_error($this->con);
+			return false;
+		}else{
+			return true;
+		}
+	}
 
 
 

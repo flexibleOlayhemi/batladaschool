@@ -36,17 +36,18 @@
 
                         Batladaschool.herokuapp.com<br>
                               
-                         BATLADA Community Islamic & Science Model School
+                         BATLADA Community Islamic & Science Model School <br>
+                         No 2A Kabir Usman Road,	
                          Batagarawa Lowcost, P.O.Box 265, Katsina State.<br>
+                         NURSERY , PRIMARY , AND SECONDARY SCHOOL<br>
+
                              
                           +234-8035675456<br>
                            <ul style="list-style-type: none;margin: 0;padding: 0;">
-                        		<li style="display: inline;"><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li style="display: inline;"><a href="#"><i class="fa fa-github"></i></a></li>
-								<li style="display: inline;"><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li style="display: inline;"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li style="display: inline;"><a href="#"><i class="fa fa-instagram"></i></a></li>
-								<li style="display: inline;"><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                        		<li style="display: inline;"><a href="https://www.facebook.com/batladaschool.lowcost"><i class="fa fa-facebook"></i></a></li>
+								<li style="display: inline;"><a href="https://twitter.com/batladaschool"><i class="fa fa-twitter"></i></a></li>
+								<li style="display: inline;"><a href="https://instagram.com/batladaschool"><i class="fa fa-instagram"></i></a></li>
+								<li style="display: inline;"><a href="https://wa.me/+2348035675456"><i class="fa fa-whatsapp"></i></a></li>
 						</ul>
                         </div><!-- end clearfix -->
                 </div><!-- end col -->

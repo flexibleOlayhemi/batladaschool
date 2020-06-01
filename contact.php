@@ -5,7 +5,14 @@
 	<?php include('cdn.php') ?>
 	<style>
 		label	{color: white;}
-	</style>
+
+    
+     #contact {
+      background: blue;
+     border-radius: 5px;
+     }
+  </style>
+	
 	
 </head>
 <body>
@@ -25,7 +32,7 @@
   		<p><b>Phone:</b> +234-8035675456</p>
   		<b> Adress:</b> Batagarawa Lowcost,P.O.Box 265, Katsina State.
   		
-  		<h5 class="pt-4">For donation </h5>
+  		<h5 class="pt-4 text-success">For donation </h5>
   		<b>Bank name: </b> Jaiz Bank <br>
   		<b>Account Number: </b> 0005251506
   		<hr style="color:  white;background-color: white; ">

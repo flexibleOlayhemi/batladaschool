@@ -32,29 +32,123 @@ if (isset($_POST['addstudent'])){
 	$fname = test_input($_POST['sfname']);
 	$mname = test_input($_POST['smname']);
 	$lname = test_input($_POST['slname']);
-	$sdob = $_POST['sdob'];
+	$sdob = date('Y-m-d',strtotime($_POST['sdob']));
 	$pnum = test_input($_POST['spnum']);
 	$address = test_input($_POST['saddress']);
 	$email = test_input($_POST['semail']);
 	$class = test_input($_POST['sclass']);
 
-	$db->addStudent($fname,$mname,$lname,$DOB,$pnum,$address,$email);
+//simage
+$name = "simage";
+$target_file = imgUpload($name);
+
+
+	$db->addStudent($fname,$mname,$lname,$sdob,$pnum,$address,$email,$target_file,$class);
 	if($db){
 		header("location:admin.php ? studmsg= New student added successfully");
+	}else {
+		header("location:admin.php ? studmsg= Error Adding student");
 	}
 
 }
+
+if (isset($_POST['updatestudent'])){
+	$fname = test_input($_POST['sfname']);
+	$mname = test_input($_POST['smname']);
+	$lname = test_input($_POST['slname']);
+	$sdob = date('Y-m-d',strtotime($_POST['sdob']));
+	$pnum = test_input($_POST['spnum']);
+	$address = test_input($_POST['saddress']);
+	$email = test_input($_POST['semail']);
+	$class = test_input($_POST['sclass']);
+	$id = $_POST['sid'];
+
+
+	$db->updateStudent($fname,$mname,$lname,$sdob,$pnum,$address,$email,$class,$id);
+	if($db){
+		header("location:admin.php ? studmsg= student updated successfully");
+	}else {
+		header("location:admin.php ? studmsg= Unable to update student");
+	}
+
+}
+
+if (isset($_POST['updateteachers'])){
+	$fname = test_input($_POST['tfname']);
+	$mname = test_input($_POST['tmname']);
+	$lname = test_input($_POST['tlname']);
+	$dob = date('Y-m-d',strtotime($_POST['tdob']));
+	$num = test_input($_POST['num']);
+	$address = test_input($_POST['taddress']);
+	$email = test_input($_POST['temail']);
+	
+	$id = $_POST['tid'];
+
+
+	$db->updateTeachers($fname,$mname,$lname,$dob,$num,$address,$email,$id);
+	if($db){
+		header("location:admin.php ? staffmsg= Staff updated");
+	}else {
+		header("location:admin.php ? staffmsg= Unable to update staff");
+	}
+
+}
+
+if (isset($_POST['uploadsimage'])){
+
+$id = $_POST['sid'];
+
+//usimage
+	$name = "usimage";
+$target_file = imgUpload($name);
+
+$db->uploadsimage($target_file,$id);
+	if($db){
+		header("location:admin.php ? studmsg= Image Updated");
+	}else {
+		header("location:admin.php ? studmsg= Error uploading Image");
+	}
+}
+
+
+
+
+if (isset($_POST['uploadtimage'])){
+
+$id = $_POST['tid'];
+
+//utimage
+
+$name = "utimage";
+$target_file = imgUpload($name);
+
+$db->uploadtimage($target_file,$id);
+	if($db){
+		header("location:admin.php ? staffmsg= Image Updated");
+	}else {
+		header("location:admin.php ? staffmsg= Error uploading Image");
+	}
+}
+
+
+
+
 
 if (isset($_POST['addstaff'])){
 	$fname = test_input($_POST['tfname']);
 	$mname = test_input($_POST['tmname']);
 	$lname = test_input($_POST['tlname']);
-	$tdob = $_POST['tdob'];
+	$tdob =  date('Y-m-d',strtotime($_POST['tdob']));
 	$num = test_input($_POST['tnum']);
 	$address = test_input($_POST['taddress']);
 	$email = test_input($_POST['temail']);
 
-	$db->addStaff($fname,$mname,$lname,$DOB,$num,$address,$email);
+//timage
+
+$name = "timage";
+$target_file = imgUpload($name);
+
+	$db->addStaff($fname,$mname,$lname,$tdob,$num,$address,$email, $target_file);
 	if($db){
 		header("location:admin.php ? staffmsg= New staff added successfully");
 	}
@@ -68,7 +162,7 @@ if (isset($_POST['addstaff'])){
 if (isset($_POST['alogin'])){ 
 	
 	$email = test_input($_POST['email']);
-	$password = md5(test_input($_POST['password']));
+	$password = test_input($_POST['password']);
 	$token = $_POST['_token'];
 
 	if ($token == "UpUxMBC96cGBIBnudeMhy6yVCE8J4I6UcRNqr37H"){
@@ -76,10 +170,12 @@ if (isset($_POST['alogin'])){
 		if ($result){
 			
 				$_SESSION['user'] = "Admin";
-				header("location: admin.php");
+				//header("location: admin.php");
+				echo "<script>window.location = \"admin.php\"</script>";
 			}
 		else{
-				header("location:admin-login.php ?m=Invalid Username and password combination");
+				//header("location:admin-login.php ?m=Invalid Username and password combination");
+				echo "<script>window.location = \"admin-login.php ?m=Invalid Username and password combination\"</script>";
 			}
 	}
 
@@ -98,6 +194,54 @@ if (isset($_POST['alogout'])){
 	session_destroy(); 
 	header("location:admin-login.php");
 }
+
+
+
+
+
+function imgUpload($name){
+	//Handle image
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES[$name]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+
+    $check = getimagesize($_FILES[$name]["tmp_name"]);
+    if($check !== false) {
+        //echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        //echo "File is not an image.";
+        $uploadOk = 0;
+    }
+
+
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "PNG" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "GIF" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    //echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    return "";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES[$name]["tmp_name"], $target_file)) {
+    	return $target_file;
+        //echo "The file ". basename( $_FILES[$name]["name"]). " has been uploaded.";
+    } else {
+
+        //echo "Sorry, there was an error uploading your file.";
+        return "";
+    }
+}
+
+
+}
+
 
 
 
@@ -122,98 +266,6 @@ $form = "
 }
 
 
-function post(){
 
-return $GLOBALS['quotes'];
-}
-
- $quotes = "Believing in yourself
-
-1. Believe you can and you’re halfway there.
-
-2. You have to expect things of yourself before you can do them.
-
-3. It always seems impossible until it’s done.
-
-4. Don’t let what you cannot do interfere with what you can do. – John Wooden
-Cultivating a success mindset
-
-5. Start where you are. Use what you have. Do what you can. – Arthur Ashe
-
-6. Successful and unsuccessful people do not vary greatly in their abilities. They vary in their desires to reach their potential. – John Maxwell
-
-7. The secret of success is to do the common things uncommonly well. – John D. Rockefeller
-
-8. Good things come to people who wait, but better things come to those who go out and get them.
-
-9. Strive for progress, not perfection.
-
-10. I find that the harder I work, the more luck I seem to have. – Thomas Jefferson
-
-11. Success is the sum of small efforts, repeated day in and day out. – Robert Collier
-
-12. Don’t wish it were easier; wish you were better. – Jim Rohn
-
-13. I don’t regret the things I’ve done. I regret the things I didn’t do when I had the chance.
-
-14. There are two kinds of people in this world: those who want to get things done and those who don’t want to make mistakes. – John Maxwell
-Overcoming procrastination
-
-15. The secret to getting ahead is getting started.
-
-16. You don’t have to be great to start, but you have to start to be great.
-
-17. The expert in everything was once a beginner.
-Hard work
-
-18. There are no shortcuts to any place worth going. – Beverly Sills
-
-19. Push yourself, because no one else is going to do it for you.
-
-20. Some people dream of accomplishing great things. Others stay awake and make it happen.
-
-21. There is no substitute for hard work. – Thomas Edison
-
-22. The difference between ordinary and extraordinary is that little “extra.”
-
-23. You don’t always get what you wish for; you get what you work for.
-
-24. It’s not about how bad you want it. It’s about how hard you’re willing to work for it.
-
-25. The only place where success comes before work is in the dictionary. – Vidal Sassoon
-
-26. There are no traffic jams on the extra mile. – Zig Ziglar
-
-27. If people only knew how hard I’ve worked to gain my mastery, it wouldn’t seem so wonderful at all. – Michelangelo
-Not making excuses
-
-28. If it’s important to you, you’ll find a way. If not, you’ll find an excuse.
-
-29. Don’t say you don’t have enough time. You have exactly the same number of hours per day that were given to Helen Keller, Pasteur, Michelangelo, Mother Teresea, Leonardo da Vinci, Thomas Jefferson, and Albert Einstein. – H. Jackson Brown Jr.
-Perseverance
-
-30. Challenges are what make life interesting. Overcoming them is what makes life meaningful. – Joshua J. Marine
-
-31. Life has two rules: 1) Never quit. 2) Always remember Rule #1.
-
-32. I’ve failed over and over and over again in my life. And that is why I succeed. – Michael Jordan
-
-33. I don’t measure a man’s success by how high he climbs, but how high he bounces when he hits the bottom. – George S. Patton
-
-34. If you’re going through hell, keep going. – Winston Churchill
-
-35. Don’t let your victories go to your head, or your failures go to your heart.
-
-36. Failure is the opportunity to begin again more intelligently. – Henry Ford
-
-37. You don’t drown by falling in the water; you drown by staying there. – Ed Cole
-
-38. The difference between a stumbling block and a stepping-stone is how high you raise your foot.
-
-39. The pain you feel today is the strength you will feel tomorrow. For every challenge encountered there is opportunity for growth.
-
-40. It’s not going to be easy, but it’s going to be worth it.
-
-Like the article? Please share it with your friends."
 
  ?>

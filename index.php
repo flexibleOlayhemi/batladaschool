@@ -10,6 +10,13 @@
 <head>
 	<title>welcome</title>
 	<?php include('cdn.php') ?>
+   <style>
+    
+     #home {
+      background: blue;
+     border-radius: 5px;
+     }
+  </style>
 	
 </head>
 <body>
@@ -30,6 +37,7 @@
       <li data-target="#bg" data-slide-to="0" class="active"></li>
       <li data-target="#bg" data-slide-to="1"></li>
       <li data-target="#bg" data-slide-to="2"></li>
+      <li data-target="#bg" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -52,6 +60,13 @@
               <div class="carousel-caption d-none d-md-block">
                 <h5>Material</h5>
                 <p>Up to date learning material for our students</p>
+              </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="img/s4.jpg" height="300px" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 style="color: white;">Administrative Block</h5>
+                <p style="color: white;">Our school Administrative Block</p>
               </div>
       </div>
     </div>
@@ -79,7 +94,7 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active ">
                     
-                           <center><h5>Quotes of the day</h5></center>
+                           <center><h5 class="text-success">Quotes of the day</h5></center>
                            <center><?php echo (date("D-M-Y")); ?></center>
                           
                           
@@ -134,12 +149,7 @@
           } 
         ?>
 
-         
-        <p>
 
-          Breaking this table into two tables, Teachers and Courses, creates the proper relationship between the data and therefore helps ensure data consistency and accuracy.
-        </p>
-          <button class="btn btn-primary">Read more>></button><hr>
       
       </div>
     </div>
