@@ -2,20 +2,22 @@
 
 class createDB{
 
-	public $db_name;
-	public $table_name;
-	public $server ;
-	public $user ;
-	public $password ;
+	public $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+	public $db_name = substr($url['path'], 1);
+	public $table_name = "News";
+	public $server = $url["host"];
+	public $user = $url["user"] ;
+	public $password  = $url["pass"];
 
 	public  $con;
 
 	public function __construct(
 		$db_name = "batlada",
 		$table_name = "News",
-	$server = "localhost",
-	$user = "root",
-	$password = ""
+	$server = $this->server,
+	$user = $this->user,
+	$password = $this->password
 
 	){
 
