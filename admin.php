@@ -6,7 +6,7 @@ require_once('post.php');
 
   $dbnews = new createDB();
   if(!isset($_SESSION['user'])){
-  header("location:admin-login.php ? m=You must login first");
+  header(urldecode("location:admin-login.php ? m=You must login first"));
 }
 
  ?>
