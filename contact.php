@@ -63,7 +63,7 @@
 			        <div class="form-group">
 			            <label for="message"> Message:</label>
 			            <textarea name="message" id="" cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
-			            <button style="margin-bottom: 2px; margin-top: 1px;" name="sendMail" type="submit" class="btn btn-primary"> Send message</button>
+			            <button style="margin-bottom: 2px; margin-top: 1px;" name="sendMail" type="submit" class="btn btn-primary mt-3"> Send message</button>
 			            
 			        </div>
 			        

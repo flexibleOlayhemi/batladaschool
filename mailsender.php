@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 //echo ($headers);
 	$m = mail($to,$subject,$message,$headers);
 	if($m)
-	header("location:contact.php ? message= Mail sent successfully");
+	header(urldecode("location:contact.php ? message= Mail sent successfully"));
 	else
-	header("location:contact.php ? message= Error sending mail");
+	header( urldecode("location:contact.php ? message= Error sending mail "));
 	
 }
  ?>
