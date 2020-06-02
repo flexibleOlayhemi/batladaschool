@@ -2,7 +2,7 @@
   require_once("./DB/db.php");
 
   $dbnews = new createDB();
-  $dbquotes = new createDB("batlada","quotes");
+  $dbquotes = new createDB("heroku_6457e24b7049eb6","quotes");
 ?>
 
 <!DOCTYPE html>
