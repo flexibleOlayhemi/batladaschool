@@ -52,7 +52,7 @@ class createDB{
 
 					(id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 					body VARCHAR(255),
-					tm DATETIME DEFAULT CURRENT_TIMESTAMP)
+					tm TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
 					";
 
 				//execute query
@@ -117,7 +117,7 @@ class createDB{
 				address VARCHAR(255),
 				email VARCHAR(100),
 				img VARCHAR(255),
-				join_date DATE DEFAULT CURRENT_TIMESTAMP
+				join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 
 				)";
 
