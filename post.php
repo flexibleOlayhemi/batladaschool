@@ -19,13 +19,13 @@ function handlePost($botton_name,$post_name,$t_name){
  if (isset($_POST['qbtn'])){
 	$id = $_POST['qbtn'];
 	$db->deletePost('quotes',$id);
-	header(urldecode("location:admin.php ? qmsg= Quote deleted successfully"));
+	header("location:admin.php? qmsg= Quote deleted successfully");
 }
 
  if (isset($_POST['nbtn'])){
 	$id = $_POST['nbtn'];
 	$db->deletePost('news',$id);
-	header(urldecode("location:admin.php ? nmsg= News deleted successfully"));
+	header("location:admin.php? nmsg= News deleted successfully");
 }
 
 if (isset($_POST['addstudent'])){
@@ -45,9 +45,9 @@ $target_file = imgUpload($name);
 
 	$db->addStudent($fname,$mname,$lname,$sdob,$pnum,$address,$email,$target_file,$class);
 	if($db){
-		header(urldecode("location:admin.php ? studmsg= New student added successfully"));
+		header("location:admin.php? studmsg= New student added successfully");
 	}else {
-		header(urldecode("location:admin.php ? studmsg= Error Adding student"));
+		header("location:admin.php? studmsg= Error Adding student");
 	}
 
 }
@@ -66,9 +66,9 @@ if (isset($_POST['updatestudent'])){
 
 	$db->updateStudent($fname,$mname,$lname,$sdob,$pnum,$address,$email,$class,$id);
 	if($db){
-		header(urldecode("location:admin.php ? studmsg= student updated successfully"));
+		header("location:admin.php? studmsg= student updated successfully");
 	}else {
-		header(urldecode("location:admin.php ? studmsg= Unable to update student"));
+		header("location:admin.php? studmsg= Unable to update student");
 	}
 
 }
@@ -87,9 +87,9 @@ if (isset($_POST['updateteachers'])){
 
 	$db->updateTeachers($fname,$mname,$lname,$dob,$num,$address,$email,$id);
 	if($db){
-		header(urldecode("location:admin.php ? staffmsg= Staff updated"));
+		header("location:admin.php? staffmsg= Staff updated");
 	}else {
-		header(urldecode("location:admin.php ? staffmsg= Unable to update staff"));
+		header("location:admin.php? staffmsg= Unable to update staff");
 	}
 
 }
@@ -104,9 +104,9 @@ $target_file = imgUpload($name);
 
 $db->uploadsimage($target_file,$id);
 	if($db){
-		header("location:admin.php ? studmsg= Image Updated");
+		header("location:admin.php? studmsg= Image Updated");
 	}else {
-		header("location:admin.php ? studmsg= Error uploading Image");
+		header("location:admin.php? studmsg= Error uploading Image");
 	}
 }
 
@@ -124,9 +124,9 @@ $target_file = imgUpload($name);
 
 $db->uploadtimage($target_file,$id);
 	if($db){
-		header(urldecode("location:admin.php ? staffmsg= Image Updated"));
+		header("location:admin.php? staffmsg= Image Updated");
 	}else {
-		header(urldecode("location:admin.php ? staffmsg= Error uploading Image"));
+		header("location:admin.php? staffmsg= Error uploading Image");
 	}
 }
 
@@ -150,7 +150,7 @@ $target_file = imgUpload($name);
 
 	$db->addStaff($fname,$mname,$lname,$tdob,$num,$address,$email, $target_file);
 	if($db){
-		header(urldecode("location:admin.php ? staffmsg= New staff added successfully"));
+		header("location:admin.php? staffmsg= New staff added successfully");
 	}
 	
 
@@ -175,12 +175,12 @@ if (isset($_POST['alogin'])){
 			}
 		else{
 				//header("location:admin-login.php ?m=Invalid Username and password combination");
-				echo "<script>window.location = urldecode(\"admin-login.php ?m=Invalid Username and password combination\")</script>";
+				echo "<script>window.location = \"admin-login.php?m=Invalid Username and password combination\"</script>";
 			}
 	}
 
 	else {
-		header(urldecode("location:admin-login.php ? m=You must login first"));
+		header("location:admin-login.php? m=You must login first");
 	}
 	
 }
@@ -192,7 +192,7 @@ if (isset($_POST['alogout'])){
 
 	// destroy the session
 	session_destroy(); 
-	header("location:urldecode('admin-login.php')");
+	header("location:admin-login.php");
 }
 
 

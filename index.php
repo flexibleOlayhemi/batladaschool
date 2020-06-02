@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>welcome</title>
+	<title>Welcome</title>
 	<?php include('cdn.php') ?>
    <style>
     

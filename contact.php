@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>welcome</title>
+	<title>Contact</title>
 	<?php include('cdn.php') ?>
 	<style>
 		label	{color: white;}
@@ -30,6 +30,7 @@
   	<div class="col-12 py-7" style="color: white;">
   		<h4 >Contact information</h4>
   		<p><b>Phone:</b> +234-8035675456</p>
+  		<p><b>Mail:</b> <a class="btn btn-primary p-0" href="mailto:batladaschool@gmail.com">batladaschool@gmail.com</a></p>
   		<b> Adress:</b> Batagarawa Lowcost,P.O.Box 265, Katsina State.
   		
   		<h5 class="pt-4 text-success">For donation </h5>

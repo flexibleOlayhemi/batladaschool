@@ -7,7 +7,7 @@
                         <div class="widget-title">
                             <h3>About US</h3>
                         </div>
-                        <p> BATLADA Community Islamic & Science Model School was astablished with the sole aim of reducing the burdens on government, by offering qualitative Education (both islamic and western) at very affordable charges to our children, deserving ophans and underprivileged children since 1995.</p>   
+                        <p style="text-align: justify-all;"> BATLADA Community Islamic & Science Model School was astablished with the sole aim of reducing the burdens on government, by offering qualitative Education (both islamic and western) at very affordable charges to our children, deserving ophans and underprivileged children since 1995.</p>   
                        
                       
                     </div><!-- end clearfix -->
@@ -23,6 +23,7 @@
                             <li><a href="about.php" style="text-decoration: none;">About</a></li>
                             <li><a href="contact.php" style="text-decoration: none;">Contact</a></li>
                             <li><a href="gallery.php" style="text-decoration: none;">Gallery</a></li>
+                            <li><a href="admin-login.php" style="text-decoration: none;">Admin</a></li>
               
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
@@ -61,7 +62,7 @@
 		Batagarawa Lowcost <br>P.O.Box 265, Katsina State.</center>
 	
         
-         <center style="color:white;font-size: 17px;"> &copy2020.  &#9415All right reserved, designed by 
+         <center style="color:white;font-size: 14px;"> &copy2020.  All right &#9415 Reserved, designed by 
          Olayiwola Olayemi
          <a href="https://instagram.com/flexibleolayemi"><i class="fa fa-instagram"></i></a>
          <a href="https://wa.me/+2348074135273"><i class="fa fa-whatsapp"></i></a>

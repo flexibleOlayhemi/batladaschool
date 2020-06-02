@@ -2,22 +2,20 @@
 
 class createDB{
 
-	
-
 	public $db_name;
 	public $table_name;
-	public $server;
-	public $user;
-	public $password;
+	public $server ;
+	public $user ;
+	public $password ;
 
 	public  $con;
 
 	public function __construct(
-		$db_name = "heroku_6457e24b7049eb6",
+		$db_name = "batlada",
 		$table_name = "News",
-	$server = "us-cdbr-east-05.cleardb.net",
-	$user = "b33f87945914f6",
-	$password = "18ed271a"
+	$server = "localhost",
+	$user = "root",
+	$password = ""
 
 	){
 
@@ -52,7 +50,7 @@ class createDB{
 
 					(id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 					body VARCHAR(255),
-					tm TIMESTAMP DEFAULT CURRENT_TIMESTAMP)
+					tm DATETIME DEFAULT CURRENT_TIMESTAMP)
 					";
 
 				//execute query
@@ -117,7 +115,7 @@ class createDB{
 				address VARCHAR(255),
 				email VARCHAR(100),
 				img VARCHAR(255),
-				join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+				join_date DATE DEFAULT CURRENT_TIMESTAMP
 
 				)";
 

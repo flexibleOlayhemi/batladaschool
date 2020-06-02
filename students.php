@@ -7,7 +7,7 @@ include "post.php";
 
   $db = new createDB();
   if(!isset($_SESSION['user'])){
-  header("location:admin-login.php ? m=You must login first");
+  header("location:admin-login.php? m=You must login first");
 }
 
 

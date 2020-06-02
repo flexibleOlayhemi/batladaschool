@@ -6,7 +6,7 @@
 <style>
 	.about{
 		 	min-height: 400px;
-		 	font-size:20px;
+		 	font-size:15px;
 		 	font-variant: italic;
 		 	color: black;
 		 	text-align: justify;
