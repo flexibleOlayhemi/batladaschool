@@ -13,9 +13,9 @@ class createDB{
 	public  $con;
 
 	public function __construct(
-		$db_name = "batlada",
+		$db_name = "heroku_db",
 		$table_name = "News",
-	$server = "ClearDB",
+	$server = "us-cdbr-east.cleardb.com",
 	$user = "b33f87945914f6",
 	$password = "18ed271a"
 
