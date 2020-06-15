@@ -4,8 +4,8 @@
       background-image: linear-gradient(to left,violet,indigo,blue,green,red,orange,red);
       -webkit-background-clip: text;-moz-background-clip: text;background-clip: text;color: transparent;
       ">
-        <img src="img/logo.jpg" style="display: inline-block !important; width: 50px;height: 50px;">
-        <b>BATLADA Community Islamic<br> & Science Model School</b>
+        <img src="img/logo.jpg" style="float: left !important; width: 50px;height: 90px;">
+        <b>BATLADA Community<br> Islamic & Science <br>Model School</b>
 
         </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

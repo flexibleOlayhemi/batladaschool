@@ -8,7 +8,7 @@
 
     
      #contact {
-      background: blue;
+      background: #191970;
      border-radius: 5px;
      }
   </style>
@@ -31,6 +31,12 @@
   		<h4 >Contact information</h4>
   		<p><b>Phone:</b> +234-8035675456</p>
   		<p><b>Mail:</b> <a class="btn btn-primary p-0" href="mailto:batladaschool@gmail.com">batladaschool@gmail.com</a></p>
+  		<ul style="list-style-type: none;margin: 0;padding: 0;">
+                        		<li style="display: inline;"><a href="https://www.facebook.com/batladaschool.lowcost"><i class="fa fa-facebook"></i></a></li>
+								<li style="display: inline;"><a href="https://twitter.com/batladaschool"><i class="fa fa-twitter"></i></a></li>
+								<li style="display: inline;"><a href="https://instagram.com/batladaschool"><i class="fa fa-instagram"></i></a></li>
+								<li style="display: inline;"><a href="https://wa.me/+2348035675456"><i class="fa fa-whatsapp"></i></a></li>
+		</ul>
   		<b> Adress:</b> Batagarawa Lowcost,P.O.Box 265, Katsina State.
   		
   		<h5 class="pt-4 text-success">For donation </h5>

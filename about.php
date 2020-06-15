@@ -17,7 +17,7 @@
 		 	
 		 }
 		 #about {
-		 	background: blue;
+		 	background: #191970;
 		 border-radius: 5px;
 		 }
 

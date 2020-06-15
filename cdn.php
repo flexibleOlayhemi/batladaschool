@@ -25,7 +25,7 @@
   		display: none;
   	}
   	body {
-  		background:radial-gradient( green 15%, #191970 60%);
+  		background: #191970;
   	}
 		  	
 		.nav-link:hover {
@@ -67,9 +67,8 @@
 			font-size: 15px;
 			line-height: 30px;
 			quotes: "\201C""\201D""\2018""\2019";
-			background-image: linear-gradient(to left,violet,indigo,blue,green,red,orange,red);
-      -webkit-background-clip: text;-moz-background-clip: text;background-clip: text;color: transparent;
-		}
+			
+       }
 
 		blockquote::before {
 			content: open-quote;
@@ -101,10 +100,11 @@
 
 		#img1 img {
 
-			width: 400px;
-			height: 400px;
+			width: auto;
+			height: auto;
+			
 			display: inline-block;
-			margin:10px; 
+			 
 
 		}
 
@@ -112,6 +112,27 @@
 
 			border: 1px solid red;
 
+		}
+		div.img {
+			margin: 5px;
+			border: 1px solid #ccc;
+			float: left;
+			width: 180px;
+		}
+
+		div.img:hover {
+			border: 1px solid #777;
+		}
+
+		div.img img {
+			width: 100%;
+			height: auto;
+		}
+
+		div.desc {
+			padding: 15px;
+			text-align: center;
+			color:white;
 		}
 
 

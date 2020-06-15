@@ -1,8 +1,8 @@
 
 
 <div class="jumbotron" style="color: blue;">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-xs-12">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
                             <h3>About US</h3>
@@ -27,9 +27,9 @@
               
                         </ul><!-- end links -->
                     </div><!-- end clearfix -->
-                </div><!-- end col -->
+        </div><!-- end col -->
         
-                <div class="col-lg-4 col-md-4 col-xs-12">
+        <div class="col-lg-4 col-md-4 col-xs-12">
                     <div class="widget clearfix">
                         <div class="widget-title">
                             <h3>Contact Details</h3>
@@ -50,13 +50,14 @@
 								<li style="display: inline;"><a href="https://instagram.com/batladaschool"><i class="fa fa-instagram"></i></a></li>
 								<li style="display: inline;"><a href="https://wa.me/+2348035675456"><i class="fa fa-whatsapp"></i></a></li>
 						</ul>
-                        </div><!-- end clearfix -->
-                </div><!-- end col -->
+                    </div><!-- end clearfix -->
+        </div><!-- end col -->
         
-            </div><!-- end row -->
-    </div>
+    </div><!-- end row -->
+</div>
+
   
-<div style="background:radial-gradient( #191970 15%, rgba(0,200,0,0.5) 60%); padding: 5px; margin-top: 0px; width: auto;">
+<div style="background:black; padding: 5px; margin-top: 0px; width: auto;">
 	
 			<center style="color:white;font-size: 17px;">BATLADA Community Islamic & Science Model School
 		Batagarawa Lowcost <br>P.O.Box 265, Katsina State.</center>
