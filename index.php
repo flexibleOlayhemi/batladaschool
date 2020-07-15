@@ -13,9 +13,9 @@
    <style>
     
      #home {
-      background:#191970;
+      background: lightblue;
       color: white;
-     border-radius: 5px;
+     border-radius: 0px;
      }
   </style>
 	

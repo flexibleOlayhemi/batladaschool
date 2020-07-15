@@ -31,13 +31,18 @@
 		.nav-link:hover {
 
 		 background: lightblue;
-		 border-radius: 5px;
+		 border-radius: 0px;
 
+		}
+		.nav-item{
+			background-color: lightblue;
+			color: white;
 		}
 
 		.carousel-item p,h5{
 			color: lightblue;
 			font-weight: bold;
+
 		}
 
 
@@ -51,6 +56,7 @@
 			z-index: 10;
 			width: 100%;
 			height: 100px;
+
 			
 
 		}
