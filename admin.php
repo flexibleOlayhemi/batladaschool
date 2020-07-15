@@ -21,18 +21,20 @@ require_once('post.php');
     
      #admin {
       background:#191970;
+      color: white;
      border-radius: 5px;
      }
   </style>
 	
 </head>
 <body>
-  <div class="container " style="background: white;">
-    <?php 
+  <?php 
 
       include "nav.php" 
 
-    ?>
+  ?>
+  <div class="container " style="background: white;">
+    
     <div class="row">
       <div class="col-12">
       <form action="" method="post">

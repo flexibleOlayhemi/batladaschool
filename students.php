@@ -27,13 +27,13 @@ include "post.php";
  	 </style>
  </head>
  <body>
- 	<div class="container">
+ 	
  	<?php 
 
       include "nav.php" 
 
     ?>
-
+<div class="container">
  	
  	
  	<div class="table-responsive bg-white p-3 pb-10">

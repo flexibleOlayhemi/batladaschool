@@ -14,21 +14,22 @@
     
      #home {
       background:#191970;
+      color: white;
      border-radius: 5px;
      }
   </style>
 	
 </head>
-<body>
+<body onscroll="disp();">
 
 
+ <?php  include('nav.php');  ?> 
   
   <div class="container">
 
-<?php  include('nav.php');  
 
 
-    ?> 
+ 
   
   
 <div class="slidder" style="margin-top: 0px !important;">
@@ -130,7 +131,7 @@
             
     
 
-  <div class="row">
+  <div class="row" id="news">
   <div class="col-12">
     <div class="card">
     <div class="card-header alert-success">School Updates</div>
@@ -141,8 +142,8 @@
 
             while($row = mysqli_fetch_assoc($result)){ ?>
 
-                <p> <?php echo $row['body']."<span style='color:green;'>  (".$row['tm'].")</span>";  ?></p>
-                <button class="btn btn-primary">Read more>></button><hr>
+                <p> <?php echo substr($row['body'],0,100)."<span style='color:green;'>  (".$row['tm'].")</span>";  ?></p>
+                <a class="btn btn-primary" href="news.php?id=<?php echo $row['id'] ?>">Read more>></a><hr>
              
               <?php 
             }
@@ -164,6 +165,7 @@
       
     </div>
   </div>
+   <button onclick="topFunction()" id="upBtn" title="goto top">Top</button>
 </div>
 
 </div>

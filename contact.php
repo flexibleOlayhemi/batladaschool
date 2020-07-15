@@ -9,6 +9,7 @@
     
      #contact {
       background: #191970;
+	  color: white;
      border-radius: 5px;
      }
   </style>
@@ -17,14 +18,14 @@
 </head>
 <body>
 
-  <div class="container">
+  
 
 
   <?php  include('nav.php');  
 
 
     ?> 
-
+<div class="container">
   
   <div class="row justify-content-center">
   	<div class="col-12 py-7" style="color: white;">

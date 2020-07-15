@@ -46,6 +46,18 @@
 			margin-bottom: 0px;
 
 		}
+		.navbar {
+			position: fixed !important;
+			z-index: 10;
+			width: 100%;
+			height: 100px;
+			
+
+		}
+		.container{
+
+			padding-top: 100px;
+		}
 		p #navigation {
 			position: fixed !important;
 			z-index: 10;
@@ -134,6 +146,23 @@
 			text-align: center;
 			color:white;
 		}
+
+		#upBtn{
+			display: none;
+			position: fixed;
+			bottom: 20px;
+			right: 30px;
+			z-index: 99;
+			font-size: 18px;
+			border: none;
+			outline: none;
+			background-color: #191970;
+			color: white;
+			cursor: pointer;
+			padding: 7px;
+			border-radius: 5px;
+		}
+		
 
 
   </style>

@@ -18,6 +18,7 @@
 		 }
 		 #about {
 		 	background: #191970;
+			 color: white;
 		 border-radius: 5px;
 		 }
 
@@ -25,9 +26,9 @@
 </style>	
 </head>
 <body>
-
+<?php  include('nav.php');    ?>
   <div class="container">
-<?php  include('nav.php');    ?> 
+ 
 		<div class="row justify-content-center">	
 				<div class="col-12">
 

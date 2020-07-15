@@ -7,15 +7,15 @@
     
      #gallery {
       background: #191970;
+	  color: white;
      border-radius: 5px;
      }
 	 
   </style>
 </head>
 <body>
+	<?php include "nav.php"; ?>
 	<div class="container">
-	
-		<?php include "nav.php"; ?>
 		<div class="row">
 	 	 <div class="col-md-12">
 			<center><h5>OUR GALLERY</h5></center>

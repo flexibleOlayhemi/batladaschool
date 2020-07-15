@@ -4,7 +4,7 @@
       background-image: linear-gradient(to left,violet,indigo,blue,green,red,orange,red);
       -webkit-background-clip: text;-moz-background-clip: text;background-clip: text;color: transparent;
       ">
-        <img src="img/logo.jpg" style="float: left !important; width: 50px;height: 90px;">
+        <img src="img/logo.jpg" style="float: left !important; width: 60px;height: 90px;">
         <b>BATLADA Community<br> Islamic & Science <br>Model School</b>
 
         </a>
